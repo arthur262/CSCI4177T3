@@ -5,15 +5,15 @@ import { Button, Form, Input } from "antd";
 
 export default function page() {
   const router = useRouter();
-  //   const onFinish = (values) => {
-  //     router.push({
-  //       pathname: "/Profile",
-  //       query: values,
-  //     });
-  //   };
-  //   const onFinishFailed = (errorInfo) => {
-  //     console.log("Failed:", errorInfo);
-  //   };
+  const onFinish = (values) => {
+    router.push({
+      pathname: "/Profile",
+      query: values,
+    });
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
 
   return (
     <Form
