@@ -1,15 +1,25 @@
 "use client";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import * as React from "react";
 import { Button, Form, Input } from "antd";
 
 export default function page() {
   const router = useRouter();
   const onFinish = (values) => {
-    router.push({
-      pathname: "/Profile",
-      query: values,
-    });
+    console.log(values);
+    var Str =
+      "firtname=" +
+      values.firtname +
+      "&lastname=" +
+      values.lastname +
+      "&email=" +
+      values.email +
+      "&password=" +
+      values.password +
+      "&passwords=" +
+      values.passwords;
+    console.log(Str);
+    router.push("/Profile?" + Str);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);

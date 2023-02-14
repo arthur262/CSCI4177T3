@@ -1,11 +1,16 @@
-import Link from "next/link";
+"use client";
 import { useState, useEffect } from "react";
 export default function page() {
   const [value, setValue] = useState("");
 
   useEffect(() => {
-    setValue(sessionStorage.get("item"));
+    var queryString = String(window.location.search).replace("?", "");
+    var result = queryString.split("&");
+    result.forEach((element) => {
+      result = result + element + "\t";
+    });
+    setValue(result);
   });
 
-  return <div>{value}</div>;
+  return <div style={{ color: "black" }}>{value}</div>;
 }
